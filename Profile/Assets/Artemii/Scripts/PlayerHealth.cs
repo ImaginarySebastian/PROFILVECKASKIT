@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentSceneIndex);
             }
         }
     }
