@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int playerHealth = 100;
+    [SerializeField] public int playerHealth = 100;
     [SerializeField] float invincibilityTime = 0.5f;
     bool invincible = false;
-
+    private void Start()
+    {
+    }
+    
     private void DisableInvinciblity()
     {
         invincible = false;
