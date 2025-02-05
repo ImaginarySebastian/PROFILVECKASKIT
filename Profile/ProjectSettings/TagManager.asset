@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - rat
+  - Restorsanity
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - Bullet
   - Water
   - UI
+  - Player
   - Enemy
-  - 
   - Ground
   - 
   - 

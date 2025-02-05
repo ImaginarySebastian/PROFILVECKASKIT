@@ -10,10 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3326956210140548308}
   - component: {fileID: 7773013889457484756}
+  - component: {fileID: 7788650699432929313}
   - component: {fileID: 8095907900925480996}
   - component: {fileID: 1866842218299154209}
   - component: {fileID: 7682946979595223765}
-  m_Layer: 0
+  - component: {fileID: 5332312368393959727}
+  - component: {fileID: 4576633131752512868}
+  - component: {fileID: 2180240286112797787}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +91,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7788650699432929313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394106229004788117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb4bdde3040f4444b91fe9fae9b44ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletSpeed: 10
+  Bullet: {fileID: 741202076702475626, guid: 0a49a73c4f4cad3469b37ee3e580b99a, type: 3}
 --- !u!114 &8095907900925480996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,21 +118,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpSpeed: 3
+  jumpSpeed: 8
   groundFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 8
+      m_Bits: 256
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  dashSpeed: 0
+  dashDuration: 20
+  dashCooldown: 0
 --- !u!70 &1866842218299154209
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -176,4 +197,71 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &5332312368393959727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394106229004788117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 60e03f682be235b48966fb3f08ec567d, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &4576633131752512868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394106229004788117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381921842f68d8f4e9658bb56cbd1e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSanity: 100
+  CurentSanity: 100
+  Damage: 5
+  SanityMeter: {fileID: 0}
+  Walking: 0
+  rat: {fileID: 4961016991928575132, guid: fe9c3b9ff28e8524195050ec3e384b82, type: 3}
+  RestorAmunt: 20
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  lowSanitycolor: {r: 0, g: 0, b: 0, a: 1}
+  mainCamera: {fileID: 0}
+  ringing: {fileID: 8300000, guid: 37f2801f9290e54469478b8ed4a146f8, type: 3}
+  Highpitchedringing: {fileID: 0}
+--- !u!114 &2180240286112797787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394106229004788117}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f7a1246196b72418e6c451a01d6794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rat: {fileID: 0}
