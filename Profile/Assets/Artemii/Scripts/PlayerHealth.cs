@@ -29,6 +29,11 @@ public class PlayerHealth : MonoBehaviour
                 invincible = true;
                 Invoke("DisableInvinciblity", invincibilityTime);
                 Debug.Log(playerHealth);
+                if(playerHealth == 0)
+                {
+                    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                    SceneManager.LoadScene(currentSceneIndex);
+                }
             }
             else
             {
