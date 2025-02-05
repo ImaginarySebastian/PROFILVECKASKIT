@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3326956210140548308}
   - component: {fileID: 7773013889457484756}
-  - component: {fileID: 8095907900925480996}
   - component: {fileID: 1866842218299154209}
   - component: {fileID: 7682946979595223765}
   m_Layer: 0
@@ -87,34 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8095907900925480996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6394106229004788117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a83e11f434394458d18157731c086c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpSpeed: 3
-  groundFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 8
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!70 &1866842218299154209
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
