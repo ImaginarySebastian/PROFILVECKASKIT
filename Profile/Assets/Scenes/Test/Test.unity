@@ -13369,9 +13369,15 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+<<<<<<< HEAD
+  dashSpeed: 100000000
+  dashDuration: 0.1
+  dashCooldown: 5
+=======
   dashSpeed: 100
   dashDuration: 0.1
   dashCooldown: 1
+>>>>>>> 6731b4bf3f3709503bcbfee66484c549f5973a34
 --- !u!212 &1979205989
 SpriteRenderer:
   m_ObjectHideFlags: 0
