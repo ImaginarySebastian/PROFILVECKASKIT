@@ -18,11 +18,10 @@ public class Sanitymeter : MonoBehaviour
 
 
     //Add audio qeue and light qeue
-    public Color normalColor = Color.white;
-    public Color lowSanitycolor = Color.black;
     public Camera mainCamera;
     public AudioClip ringing;
     public AudioSource Highpitchedringing;
+    public Image OverLay;
 
 
     void Start()
@@ -39,6 +38,15 @@ public class Sanitymeter : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
+
+        if(OverLay == null)
+        {
+            Debug.LogError("OverLay (Image) is not assigned in the inspector!");
+            if (OverLay != null)
+            {
+                OverLay.color = new Color(0, 0, 0, 0);
+            }
+        }
     }
 
 
@@ -46,20 +54,25 @@ public class Sanitymeter : MonoBehaviour
     {
         if (Walking == true && CurentSanity >= 0f)
         {
-            //Sanity goes down when walking ;)
+            //Sanity goes down all the time ;)
             CurentSanity = CurentSanity - Damage * Time.deltaTime;
             CurentSanity = Mathf.Clamp(CurentSanity, 0f, MaxSanity);
             SanityMeter.value = CurentSanity;
+
+            Darkenscren();
         }
         //Sound starts playing and the scren go's darker
+       
+        
+        
         if (CurentSanity == 60f && Highpitchedringing && !Highpitchedringing.isPlaying)
         {
             Highpitchedringing.PlayOneShot(ringing);
-            mainCamera.backgroundColor = lowSanitycolor;
+           
         }
-        //If you "eat" or pick up a rat sanity restors
+        
     }
-
+    //If you "eat" or pick up a rat sanity restors
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
@@ -70,7 +83,7 @@ public class Sanitymeter : MonoBehaviour
 
         }
     }
-
+    //gives back the sanity
     void Restorsanity()
     {
         Debug.Log("Before restore: " + CurentSanity);
@@ -83,8 +96,18 @@ public class Sanitymeter : MonoBehaviour
         {
             SanityMeter.value = CurentSanity;
         }
-
+        Darkenscren();
         Debug.Log("After restore: " + CurentSanity);
     }
 
+    void Darkenscren()
+    {
+        //The Transision to darkscreen =)
+        if(OverLay != null)
+        {
+            float targetAlpha = 1f - CurentSanity / MaxSanity;
+            OverLay.color = new Color(0, 0, 0, Mathf.Lerp(OverLay.color.a, targetAlpha, Time.deltaTime * 100f));
+            Debug.Log("OverLay alpha: " + OverLay.color.a);
+        }
+    }
 }

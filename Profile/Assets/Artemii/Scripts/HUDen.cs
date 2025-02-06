@@ -25,7 +25,7 @@ public class HUDen : MonoBehaviour
     {
         if(pla != null && healthbar != null)
         {
-            healthbar.value = pla.playerHealth;
+            //healthbar.value = pla.playerHealth;
         }
     }
 }

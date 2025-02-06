@@ -48,17 +48,22 @@ public class PlayerMovements : MonoBehaviour
     {
         if (!canDash) yield break;
         canDash = false;
-        float dashDirection = moveInput.x != 0 ? Mathf.Sign(moveInput.x) : lastDirection;
-        lastDirection = dashDirection; 
 
-        rb.gravityScale = 0; 
-        rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
-        yield return new WaitForSeconds(dashDuration); 
+        float dashDirection = moveInput.x != 0 ? Mathf.Sign(moveInput.x) : lastDirection;
+        lastDirection = dashDirection;
+
+        float startTime = Time.time;
+        rb.gravityScale = originalGravity * 0.9f; 
+
+        while (Time.time < startTime + dashDuration)
+        {
+            rb.velocity = new Vector2(dashDirection * dashSpeed, rb.velocity.y); 
+            yield return null; 
+        }
 
         rb.gravityScale = originalGravity; 
-        rb.velocity = new Vector2(0, rb.velocity.y); 
-        yield return new WaitForSeconds(dashCooldown); 
-        canDash = true; 
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
     private void OnDash()
     {   
