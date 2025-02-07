@@ -5,17 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Edge
+  - Hinder
+  - Restorsanity
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - player
   - Water
   - UI
-  - Enemy
+  - Bullet
+  - enemy
   - Hinder
-  - Ground
   - 
   - 
   - 
@@ -32,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - ground
   - 
   - 
   - 

@@ -1,0 +1,47 @@
+.header {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    -unity-font: url("project://database/Assets/LInn%C3%A9a/Fonts/DotGothic16/DotGothic16-Regular.ttf?fileID=12800000&guid=b3411212d2e427141ba78b75e0432f07&type=3#DotGothic16-Regular");
+    -unity-font-definition: initial;
+}
+
+.button {
+    width: 150px;
+    height: 100px;
+    -unity-font: url("project://database/Assets/LInn%C3%A9a/Fonts/DotGothic16/DotGothic16-Regular.ttf?fileID=12800000&guid=b3411212d2e427141ba78b75e0432f07&type=3#DotGothic16-Regular");
+    -unity-font-definition: initial;
+    background-image: url("project://database/Assets/SG-grafik/sprites/button_.png?fileID=2800000&guid=3683be45a683cf445a7f3ca371332ed1&type=3#button_");
+    background-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: rgb(242, 242, 242);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: rgb(56, 56, 56);
+    font-size: 20px;
+}
+
+.Button:hover {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out-bounce;
+    scale: 1.1 1.1;
+}
+
+.labels {
+    font-size: 25px;
+    -unity-font: url("project://database/Assets/LInn%C3%A9a/Fonts/DotGothic16/DotGothic16-Regular.ttf?fileID=12800000&guid=b3411212d2e427141ba78b75e0432f07&type=3#DotGothic16-Regular");
+    -unity-font-definition: initial;
+    color: rgb(0, 0, 0);
+}
+
+#VolumeSlider Label {
+    min-width: auto;
+    min-height: auto;
+}
+
+.backbutton {
+    background-image: url("project://database/Assets/LInn%C3%A9a/Sprites/backbutton.png?fileID=2800000&guid=8246587d9ff6d064f81305b0edae246c&type=3#backbutton");
+}
