@@ -3,15 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Hinder
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
   - 
+  - enemy
+  - Hinder
   - 
   - 
   - 
@@ -28,9 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - ground
   - 
   - 
   - 
