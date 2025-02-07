@@ -19,7 +19,7 @@ public class PlayerShotting : MonoBehaviour
     {
         GameObject bullet = Instantiate(Bullet, transform.position, transform.rotation);
         Rigidbody2D rb = bullet.GetComponent < Rigidbody2D >();
-        rb.AddForce(transform.up * BulletSpeed, ForceMode2D.Impulse);
+        rb.AddForce(transform.right * BulletSpeed, ForceMode2D.Impulse);
 
     }
 
