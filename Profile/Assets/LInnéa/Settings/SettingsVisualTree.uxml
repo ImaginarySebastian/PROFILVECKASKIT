@@ -9,6 +9,6 @@
                 <ui:Slider high-value="1" name="VolumeSlider" class="labels" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="backbutton" style="width: 50px; height: 50px; position: absolute; top: 80px; left: 300px;" />
+        <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="backbutton" style="width: 50px; height: 50px; position: absolute; top: 80px; left: 600px;" />
     </ui:VisualElement>
 </ui:UXML>
