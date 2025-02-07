@@ -7,6 +7,51 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using JetBrains.Annotations;
 
+public class Menu : MonoBehaviour
+{
+    [SerializeField] UIDocument _document;
+    [SerializeField] List<ButtonEvent> _buttonEvents;
+    [SerializeField] List<VolumeSlider> _volumeSliders;
+    [SerializeField] List<ToggleEvent> _toggleEvents;
+
+    VisualElement _curMenu = null;
+
+    public void SwitchMenu(string menuName)
+    {
+        if (_curMenu != null)
+        {
+            _curMenu.style.display = DisplayStyle.None;
+        }
+        _curMenu = _document.rootVisualElement.Q<VisualElement>(menuName);
+        _curMenu.style.display = DisplayStyle.Flex;
+    }
+    public void LoadScene(int bulidindex)
+    {
+        SceneManager.LoadScene(bulidindex);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+    private void OnEnable()
+    {
+        _curMenu = _document.rootVisualElement.Q<VisualElement>("MenuVisualElement");
+        _buttonEvents.ForEach(button => button.Activate(_document));
+        _volumeSliders.ForEach(button => button.Activete(_document));
+        _toggleEvents.ForEach(button => button.Activete(_document));
+    }
+    private void OnDisable()
+    {
+        _buttonEvents.ForEach(button => button.InActivate(_document));
+        _volumeSliders.ForEach(button => button.InActivate(_document));
+        _toggleEvents.ForEach(button => button.InActivate(_document));
+    }
+}
+
 [System.Serializable]
 public class ClickChange : UnityEvent<ClickEvent>
 {
@@ -83,46 +128,4 @@ public class ButtonEvent
         button.clicked -= unityEvent.Invoke;
     }
 }
-public class Menu : MonoBehaviour
-{
-    [SerializeField] UIDocument _document;
-    [SerializeField] List<ButtonEvent> _buttonEvents;
-    [SerializeField] List<VolumeSlider> _volumeSliders;
-    [SerializeField] List<ToggleEvent> _toggleEvents;
 
-    VisualElement _curMenu = null;
-
-    public void SwitchMenu(string menuName)
-    {
-        if (_curMenu != null)
-        {
-            _curMenu.style.display = DisplayStyle.None;
-        }
-        _curMenu = _document.rootVisualElement.Q<VisualElement>(menuName);
-        _curMenu.style.display = DisplayStyle.Flex;
-    }
-    public void LoadScene(int bulidindex)
-    {
-        SceneManager.LoadScene(bulidindex);
-    }
-    public void Quit()
-    {
-        Application.Quit();
-
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-    }
-    private void OnEnable()
-    {
-        _buttonEvents.ForEach(button => button.Activate(_document));
-        _volumeSliders.ForEach(button => button.Activete(_document));
-        _toggleEvents.ForEach(button => button.Activete(_document));
-    }
-    private void OnDisable()
-    {
-        _buttonEvents.ForEach(button => button.InActivate(_document));
-        _volumeSliders.ForEach(button => button.InActivate(_document));
-        _toggleEvents.ForEach(button => button.InActivate(_document));
-    }
-}
