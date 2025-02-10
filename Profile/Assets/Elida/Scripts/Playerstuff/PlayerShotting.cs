@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,21 +9,41 @@ public class PlayerShotting : MonoBehaviour
 {
     [SerializeField] float BulletSpeed = 10f;
     [SerializeField] GameObject Bullet;
+    public float Direction = 1f;
 
-    private void Update()
+
+    void Start() 
+    {
+        Direction = transform.localScale.x > 0 ? 1f : -1f;
+    }
+    void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             OnFire();
         }
+        if (transform.localScale.x < 0)
+        {
+            Direction = -1f;
+        }
+        else
+        {
+            Direction = 1f;
+        }
+
     }
     void OnFire()
     {
         GameObject bullet = Instantiate(Bullet, transform.position, transform.rotation);
         Rigidbody2D rb = bullet.GetComponent < Rigidbody2D >();
-        rb.AddForce(transform.right * BulletSpeed, ForceMode2D.Impulse);
+        
+
+        if(rb != null)
+        {
+            rb.velocity = new Vector2(Direction * BulletSpeed, 0f);
+        }
 
     }
 
-
+  
 }

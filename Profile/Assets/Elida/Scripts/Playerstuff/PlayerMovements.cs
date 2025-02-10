@@ -24,9 +24,19 @@ public class PlayerMovements : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         originalGravity = rb.gravityScale;
     }
-    private void OnMove(InputValue value)
+    void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.localScale = new Vector2(1f, 1f);
+        }
     }
     void OnJump()
     {
@@ -69,7 +79,7 @@ public class PlayerMovements : MonoBehaviour
     {   
         StartCoroutine(Dash());
     }
-    // Update is called once per frame
+    
     void Update()
     {
         if (moveInput.x != 0)

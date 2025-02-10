@@ -3,20 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - Hinder
-  - Restorsanity
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - 
   - Water
   - UI
-  - Bullet
-  - enemy
-  - Hinder
   - 
   - 
   - 
@@ -33,7 +27,10 @@ TagManager:
   - 
   - 
   - 
-  - ground
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
