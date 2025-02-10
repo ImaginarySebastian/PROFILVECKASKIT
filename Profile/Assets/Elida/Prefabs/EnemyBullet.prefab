@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 923886988831190870}
   - component: {fileID: 383002854145752964}
   - component: {fileID: 1872523071243892623}
-  - component: {fileID: -8396542754353553816}
-  - component: {fileID: 7518737183559488564}
-  m_Layer: 7
-  m_Name: Bullet
-  m_TagString: Bullet
+  - component: {fileID: 6692958244846009589}
+  - component: {fileID: 3770369442800970011}
+  m_Layer: 8
+  m_Name: EnemyBullet
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-8396542754353553816
+--- !u!114 &6692958244846009589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,10 +123,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 741202076702475626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f31871ad1daaca047bb2dc15e9a877f3, type: 3}
+  m_Script: {fileID: 11500000, guid: f2ddd36ecd33d2e4aaba15e77ebda5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &7518737183559488564
+--- !u!60 &3770369442800970011
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isGrounded == true)
+        if (isGrounded == true)
         {
             if (player != null)
             {

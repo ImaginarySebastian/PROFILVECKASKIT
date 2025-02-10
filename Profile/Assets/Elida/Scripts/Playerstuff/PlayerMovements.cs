@@ -18,25 +18,18 @@ public class PlayerMovements : MonoBehaviour
     Rigidbody2D rb;
     bool isGrounded = true;
     float originalGravity;
+    SpriteRenderer spriteRenderer;
     float lastDirection = 1;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         originalGravity = rb.gravityScale;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.localScale = new Vector2(-1f, 1f);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.localScale = new Vector2(1f, 1f);
-        }
+        
     }
     void OnJump()
     {
@@ -51,7 +44,15 @@ public class PlayerMovements : MonoBehaviour
         rb.velocity = playerVelocity;
         if (moveInput.x != 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(moveInput.x), transform.localScale.y); 
+            FlipPlayer(moveInput.x);
+        }
+    }
+    void FlipPlayer(float moveDirection)
+    {
+        if (Mathf.Sign(moveDirection) != lastDirection) // Om riktningen ändras
+        {
+            lastDirection = Mathf.Sign(moveDirection);
+            spriteRenderer.flipX = lastDirection < 0; // Flippar åt vänster
         }
     }
     private IEnumerator Dash()
@@ -79,14 +80,22 @@ public class PlayerMovements : MonoBehaviour
     {   
         StartCoroutine(Dash());
     }
-    
     void Update()
     {
         if (moveInput.x != 0)
         {
             lastDirection = moveInput.x;
         }
+        Debug.Log(lastDirection);
         Run();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Kolliderade med: " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Spelare kolliderade med fiende");
+        }
     }
     private void FixedUpdate()
     {
