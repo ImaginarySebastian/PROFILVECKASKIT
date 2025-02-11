@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
     [SerializeField] List<ButtonEvent> _buttonEvents;
     [SerializeField] List<VolumeSlider> _volumeSliders;
     [SerializeField] List<ToggleEvent> _toggleEvents;
+    [SerializeField] string startMenu;
 
     VisualElement _curMenu = null;
 
@@ -39,7 +40,7 @@ public class Menu : MonoBehaviour
     }
     private void OnEnable()
     {
-        _curMenu = _document.rootVisualElement.Q<VisualElement>("MenuVisualElement");
+        _curMenu = _document.rootVisualElement.Q<VisualElement>(startMenu);
         _buttonEvents.ForEach(button => button.Activate(_document));
         _volumeSliders.ForEach(button => button.Activete(_document));
         _toggleEvents.ForEach(button => button.Activete(_document));
