@@ -35,26 +35,26 @@ public class GameSession : MonoBehaviour
         {
             case "Easy":
                 playerLives = 5;
-                en.enemySpeed = 3f;
-                sin.enemySpeed = 5f;
-                fly.enemySpeed = 2f;
+                //en.enemySpeed = 3f;
+                //sin.enemySpeed = 5f;
+                //fly.enemySpeed = 2f;
                 break;
             case "Medium":
                 playerLives = 3;
-                en.enemySpeed = 5f;
-                sin.enemySpeed = 7f;
-                fly.enemySpeed = 4f;
+               // en.enemySpeed = 5f;
+                //sin.enemySpeed = 7f;
+                //fly.enemySpeed = 4f;
                 break;
             case "HardCore":
                 playerLives = 1;
-                en.enemySpeed = 10f;
-                sin.enemySpeed = 13f;
-                fly.enemySpeed = 7f;
+                //en.enemySpeed = 10f;
+                //sin.enemySpeed = 13f;
+                //fly.enemySpeed = 7f;
                 break;
             default:
                 playerLives = 3;
-                en.enemySpeed = 5f;
-                sin.enemySpeed = 7f;
+               // en.enemySpeed = 5f;
+                //sin.enemySpeed = 7f;
                 break;
         }
         Debug.Log("Difficulty:" + difficulty + "Player Lives set to " + playerLives);

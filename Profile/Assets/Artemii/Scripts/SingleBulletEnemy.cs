@@ -63,7 +63,7 @@ public class SingleBulletEnemy : MonoBehaviour
             rb.velocity = direction * bulletSpeed;
         }
     }
-    private IEnumerator Jump()
+    private IEnumerator Jump()  
     {
         isGrounded = false;
         float directionOfJump = Mathf.Sign(player.transform.position.x - transform.position.x);
