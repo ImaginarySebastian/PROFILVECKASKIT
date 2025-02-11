@@ -30,3 +30,9 @@
     border-top-color: rgb(41, 41, 41);
     border-bottom-color: rgb(41, 41, 41);
 }
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-image: url("project://database/Assets/SG-grafik/sprites/Profil/Heart%20lif_.png?fileID=2800000&guid=4a28e05988880994cb7e84f7fa8c2f3b&type=3#Heart lif_");
+}

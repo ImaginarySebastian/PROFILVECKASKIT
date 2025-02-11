@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFlying : MonoBehaviour
 {
-    [SerializeField] float enemySpeed = 5f;
+    [SerializeField] public float enemySpeed = 3f;
     GameObject player;
     Rigidbody2D rb;
     // Start is called before the first frame update
