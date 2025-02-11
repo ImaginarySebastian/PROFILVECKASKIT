@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8201786665542842526}
   - component: {fileID: 5354576365545940447}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Edegecheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 853993334453943969}
   - component: {fileID: 6549781588949934717}
   - component: {fileID: 7003020567232530472}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7003020567232530472
 MonoBehaviour:
@@ -262,10 +262,10 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 33554696
+      m_Bits: 24576
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   edge: {fileID: 5354576365545940447}
-  jumpSpeed: 10
+  jumpSpeed: 5

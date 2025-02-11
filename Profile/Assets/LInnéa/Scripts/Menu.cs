@@ -15,7 +15,8 @@ public class Menu : MonoBehaviour
     [SerializeField] List<ToggleEvent> _toggleEvents;
     [SerializeField] string startMenu;
 
-    VisualElement _curMenu = null;
+    private VisualElement _curMenu = null;
+    private DropdownField _difficultyDropdown;
 
     public void SwitchMenu(string menuName)
     {
@@ -26,10 +27,12 @@ public class Menu : MonoBehaviour
         _curMenu = _document.rootVisualElement.Q<VisualElement>(menuName);
         _curMenu.style.display = DisplayStyle.Flex;
     }
-    public void LoadScene(int bulidindex)
+
+    public void LoadScene(int buildIndex)
     {
-        SceneManager.LoadScene(bulidindex);
+        SceneManager.LoadScene(buildIndex);
     }
+
     public void Quit()
     {
         Application.Quit();
@@ -38,32 +41,49 @@ public class Menu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
     private void OnEnable()
     {
         _curMenu = _document.rootVisualElement.Q<VisualElement>(startMenu);
         _buttonEvents.ForEach(button => button.Activate(_document));
-        _volumeSliders.ForEach(button => button.Activete(_document));
-        _toggleEvents.ForEach(button => button.Activete(_document));
+        _volumeSliders.ForEach(slider => slider.Activete(_document));
+        _toggleEvents.ForEach(toggle => toggle.Activete(_document));
+
+        // Hämta och konfigurera svårighets-dropdown
+        _difficultyDropdown = _document.rootVisualElement.Q<DropdownField>("DifficultyChoose");
+        if (_difficultyDropdown != null)
+        {
+            Debug.Log("Dropdown hittades!");
+            _difficultyDropdown.choices = new List<string> { "Easy", "Medium", "Hard", "Insane" };
+            _difficultyDropdown.value = PlayerPrefs.GetString("Difficulty", "Medium");
+            _difficultyDropdown.RegisterValueChangedCallback(evt => SetDifficulty(evt.newValue));
+        }
     }
+
     private void OnDisable()
     {
         _buttonEvents.ForEach(button => button.InActivate(_document));
-        _volumeSliders.ForEach(button => button.InActivate(_document));
-        _toggleEvents.ForEach(button => button.InActivate(_document));
+        _volumeSliders.ForEach(slider => slider.InActivate(_document));
+        _toggleEvents.ForEach(toggle => toggle.InActivate(_document));
+    }
+
+    private void SetDifficulty(string difficulty)
+    {
+        PlayerPrefs.SetString("Difficulty", difficulty);
+        PlayerPrefs.Save();
     }
 }
 
 [System.Serializable]
 public class ClickChange : UnityEvent<ClickEvent>
 {
-
 }
-[System.Serializable]
 
+[System.Serializable]
 public class BoolChange : UnityEvent<bool>
 {
-
 }
+
 [System.Serializable]
 public class VolumeSlider
 {
@@ -72,6 +92,7 @@ public class VolumeSlider
     [SerializeField] string _volumeName = "";
     [SerializeField] ClickChange _clickEvent;
     Slider _slider;
+
     public void Activete(UIDocument document)
     {
         if (_slider == null)
@@ -84,11 +105,13 @@ public class VolumeSlider
         _slider.RegisterCallback<ChangeEvent<float>>(evt => _audioMixer.SetFloat(_volumeName, evt.newValue - 80));
         _slider.RegisterCallback<ClickEvent>(_clickEvent.Invoke);
     }
+
     public void InActivate(UIDocument document)
     {
         _slider.UnregisterCallback<ChangeEvent<float>>(evt => _audioMixer.SetFloat(_volumeName, evt.newValue - 80));
     }
 }
+
 [System.Serializable]
 public class ToggleEvent
 {
@@ -105,17 +128,20 @@ public class ToggleEvent
         }
         _toggle.RegisterCallback<ChangeEvent<bool>>(evt => _boolEvent.Invoke(evt.newValue));
     }
+
     public void InActivate(UIDocument document)
     {
         _toggle.UnregisterCallback<ChangeEvent<bool>>(evt => _boolEvent.Invoke(evt.newValue));
     }
 }
+
 [System.Serializable]
 public class ButtonEvent
 {
     [SerializeField] string _buttonName = "";
     [SerializeField] UnityEvent unityEvent;
     Button button;
+
     public void Activate(UIDocument document)
     {
         if (button == null)
@@ -124,9 +150,9 @@ public class ButtonEvent
         }
         button.clicked += unityEvent.Invoke;
     }
+
     public void InActivate(UIDocument document)
     {
         button.clicked -= unityEvent.Invoke;
     }
 }
-

@@ -27,16 +27,7 @@ public class PlayerMovements : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.localScale = new Vector2(-1f, 1f);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.localScale = new Vector2(1f, 1f);
-        }
+        
     }
     void OnJump()
     {
@@ -51,8 +42,17 @@ public class PlayerMovements : MonoBehaviour
         rb.velocity = playerVelocity;
         if (moveInput.x != 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(moveInput.x), transform.localScale.y); 
+            FlipPlayer(moveInput.x);
         }
+    }
+    void FlipPlayer(float moveDirection)
+    {
+        if (moveDirection != 0 && Mathf.Sign(moveDirection) != Mathf.Sign(transform.localScale.x))
+        {
+            transform.localScale = new Vector2(Mathf.Sign(moveDirection), transform.localScale.y);
+        }
+        
+
     }
     private IEnumerator Dash()
     {
@@ -79,13 +79,13 @@ public class PlayerMovements : MonoBehaviour
     {   
         StartCoroutine(Dash());
     }
-    
     void Update()
     {
         if (moveInput.x != 0)
         {
             lastDirection = moveInput.x;
         }
+        Debug.Log(lastDirection);
         Run();
     }
     private void FixedUpdate()
