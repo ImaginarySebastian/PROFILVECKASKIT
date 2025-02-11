@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EnemyBullet : MonoBehaviour
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.GameCenter;
+public class PlayerDeath : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             FindFirstObjectByType<GameSession>().TakeLife();
         }
-        Destroy(gameObject);
     }
 }

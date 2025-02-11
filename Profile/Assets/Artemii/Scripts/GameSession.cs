@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameSession : MonoBehaviour
 {
     [SerializeField] public int playerLives = 3;
+    Enemy en;
+    SingleBulletEnemy sin;
+    EnemyFlying fly;
     private void Awake()
     {
         int numGameSession = FindObjectsByType<GameSession>(FindObjectsSortMode.None).Length;
@@ -20,7 +23,41 @@ public class GameSession : MonoBehaviour
     }
     private void Start()
     {
+        SetPlayerLivesByDifficulty();
         Debug.Log("Player Lives is " + playerLives);
+        en = GetComponent<Enemy>();
+    }
+    private void SetPlayerLivesByDifficulty()
+    {
+        string difficulty = PlayerPrefs.GetString("Difficulty","Medium");
+
+        switch (difficulty)
+        {
+            case "Easy":
+                playerLives = 5;
+                en.enemySpeed = 3f;
+                sin.enemySpeed = 5f;
+                fly.enemySpeed = 2f;
+                break;
+            case "Medium":
+                playerLives = 3;
+                en.enemySpeed = 5f;
+                sin.enemySpeed = 7f;
+                fly.enemySpeed = 4f;
+                break;
+            case "HardCore":
+                playerLives = 1;
+                en.enemySpeed = 10f;
+                sin.enemySpeed = 13f;
+                fly.enemySpeed = 7f;
+                break;
+            default:
+                playerLives = 3;
+                en.enemySpeed = 5f;
+                sin.enemySpeed = 7f;
+                break;
+        }
+        Debug.Log("Difficulty:" + difficulty + "Player Lives set to " + playerLives);
     }
     public void TakeLife()
     {

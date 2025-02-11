@@ -6,14 +6,13 @@ using UnityEngine.PlayerLoop;
 
 public class SingleBulletEnemy : MonoBehaviour
 {
-
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed = 5f;
     [SerializeField] ContactFilter2D groundFilter;
     [SerializeField] BoxCollider2D edge;
     [SerializeField] float jumpSpeed = 10f;
-    [SerializeField] float enemySpeed = 3f;
+    [SerializeField] public float enemySpeed = 3f;
     private bool isGrounded = false;
     Rigidbody2D rb;
     private Transform player;
@@ -29,10 +28,8 @@ public class SingleBulletEnemy : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Checking if I should shoot...");
             if (playerInRange && !haveShooted)
             {
-                Debug.Log("Shooting now!");
                 Shoot();
                 haveShooted = true;
                 yield return new WaitForSeconds(0.5f);
@@ -57,7 +54,6 @@ public class SingleBulletEnemy : MonoBehaviour
     void Shoot()
     {
         if (bulletPrefab == null || firePoint == null) return;
-        Debug.Log("Shooting at player!");
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
@@ -83,7 +79,6 @@ public class SingleBulletEnemy : MonoBehaviour
         {
             player = other.transform;
             playerInRange = true;
-            Debug.Log("Player in range!");
             StartCoroutine(AttackingCyckle());
         }
     }

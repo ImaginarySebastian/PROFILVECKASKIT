@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float enemySpeed = 3f;
+    [SerializeField] public float enemySpeed = 3f;
     [SerializeField] ContactFilter2D groundFilter;
     [SerializeField] BoxCollider2D edge;
     [SerializeField] float jumpSpeed = 10f;

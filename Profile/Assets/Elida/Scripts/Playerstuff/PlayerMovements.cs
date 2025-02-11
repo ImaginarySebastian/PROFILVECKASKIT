@@ -89,14 +89,6 @@ public class PlayerMovements : MonoBehaviour
         Debug.Log(lastDirection);
         Run();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Kolliderade med: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Spelare kolliderade med fiende");
-        }
-    }
     private void FixedUpdate()
     {
         isGrounded = rb.IsTouching(groundFilter);
