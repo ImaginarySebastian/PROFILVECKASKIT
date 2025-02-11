@@ -24,7 +24,6 @@ public class SingleBulletEnemy : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        StartCoroutine(AttackingCyckle());
     }
     private IEnumerator AttackingCyckle()
     {
@@ -36,10 +35,10 @@ public class SingleBulletEnemy : MonoBehaviour
                 Debug.Log("Shooting now!");
                 Shoot();
                 haveShooted = true;
+                yield return new WaitForSeconds(0.5f);
             }
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(5f);
             haveShooted = false;
-            yield return Run();
         }
     }
     void Update()
@@ -49,15 +48,11 @@ public class SingleBulletEnemy : MonoBehaviour
         {
             StartCoroutine(Jump());
         }
-    }
-    private IEnumerator Run()
-    {
-        if (isGrounded == true && player != null)
+        if (haveShooted && isGrounded && player != null)
         {
             float direction = Mathf.Sign(player.transform.position.x - transform.position.x);
             rb.velocity = new Vector2(direction * enemySpeed, rb.velocity.y);
         }
-        yield return new WaitForSeconds(2f);
     }
     void Shoot()
     {
@@ -89,6 +84,7 @@ public class SingleBulletEnemy : MonoBehaviour
             player = other.transform;
             playerInRange = true;
             Debug.Log("Player in range!");
+            StartCoroutine(AttackingCyckle());
         }
     }
     private void OnTriggerExit2D(Collider2D other)
