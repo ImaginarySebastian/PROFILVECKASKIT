@@ -5,12 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-<<<<<<< HEAD
-  - rat
   - Restorsanity
-=======
-  - Edge
->>>>>>> 6731b4bf3f3709503bcbfee66484c549f5973a34
+  - Wall
+  - Bullet
+  - Hinder
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -19,13 +18,9 @@ TagManager:
   - Water
   - UI
   - Player
-  - Enemy
-<<<<<<< HEAD
-=======
-  - Hinder
->>>>>>> 6731b4bf3f3709503bcbfee66484c549f5973a34
   - Ground
-  - 
+  - Enemy
+  - Hinder
   - 
   - 
   - 

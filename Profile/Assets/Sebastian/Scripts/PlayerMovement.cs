@@ -24,25 +24,25 @@ namespace Movement
 
 
 
-#region Input
+    #region Input
 
-        public void JumpInput(InputAction.CallbackContext context)
-        {
-            if (context.performed)
+            public void JumpInput(InputAction.CallbackContext context)
             {
-                _pressedJump = true;
+                if (context.performed)
+                {
+                    _pressedJump = true;
+                }
+                else if (context.canceled)
+                {
+                    _pressedJump = false;
+                }
             }
-            else if (context.canceled)
+            public void MoveInput(InputAction.CallbackContext context)
             {
-                _pressedJump = false;
+                _horizontal = context.ReadValue<Vector2>().x;
             }
-        }
-        public void MoveInput(InputAction.CallbackContext context)
-        {
-            _horizontal = context.ReadValue<Vector2>().x;
-        }
 
-#endregion
+    #endregion
 
         void Update()
         {
