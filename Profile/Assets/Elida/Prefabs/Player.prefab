@@ -141,7 +141,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 495a5d49848e08b4ca44f30d32e8db61, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -152,7 +152,7 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8710742991845053956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a83e11f434394458d18157731c086c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpSpeed: 5
+  moveSpeed: 12
+  jumpSpeed: 10
   groundFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -204,14 +204,14 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 64
+      m_Bits: 640
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  dashSpeed: 0
-  dashDuration: 0
-  dashCooldown: 0
+  dashSpeed: 150
+  dashDuration: 0.1
+  dashCooldown: 3
 --- !u!114 &8509839302927788102
 MonoBehaviour:
   m_ObjectHideFlags: 0
