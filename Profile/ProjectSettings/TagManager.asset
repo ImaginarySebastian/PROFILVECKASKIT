@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Restorsanity
   - Wall
+  - Bullet
+  - Hinder
+  - EnemyBullet
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -15,16 +19,16 @@ TagManager:
   - Water
   - UI
   - Player
-  - ground
+  - Ground
+  - Enemy
+  - Hinder
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Lava
   - 
   - 
   - 

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float enemySpeed = 3f;
     [SerializeField] ContactFilter2D groundFilter;
     [SerializeField] BoxCollider2D edge;
-    [SerializeField] float jumpSpeed = 10f;
+    [SerializeField] float jumpSpeed = 5f;
     bool isGrounded = true;
     GameObject player;
     Rigidbody2D rb;

@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
     [SerializeField] List<ButtonEvent> _buttonEvents;
     [SerializeField] List<VolumeSlider> _volumeSliders;
     [SerializeField] List<ToggleEvent> _toggleEvents;
+    [SerializeField] string startMenu;
 
     private VisualElement _curMenu = null;
     private DropdownField _difficultyDropdown;
@@ -43,7 +44,7 @@ public class Menu : MonoBehaviour
 
     private void OnEnable()
     {
-        _curMenu = _document.rootVisualElement.Q<VisualElement>("MenuVisualElement");
+        _curMenu = _document.rootVisualElement.Q<VisualElement>(startMenu);
         _buttonEvents.ForEach(button => button.Activate(_document));
         _volumeSliders.ForEach(slider => slider.Activete(_document));
         _toggleEvents.ForEach(toggle => toggle.Activete(_document));
@@ -53,7 +54,7 @@ public class Menu : MonoBehaviour
         if (_difficultyDropdown != null)
         {
             Debug.Log("Dropdown hittades!");
-            _difficultyDropdown.choices = new List<string> { "Easy", "Medium", "Hard", "Insane" };
+            _difficultyDropdown.choices = new List<string> { "Easy", "Medium", "HardCore"};
             _difficultyDropdown.value = PlayerPrefs.GetString("Difficulty", "Medium");
             _difficultyDropdown.RegisterValueChangedCallback(evt => SetDifficulty(evt.newValue));
         }

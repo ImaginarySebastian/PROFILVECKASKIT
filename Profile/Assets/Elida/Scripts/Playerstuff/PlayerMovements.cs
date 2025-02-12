@@ -18,13 +18,11 @@ public class PlayerMovements : MonoBehaviour
     Rigidbody2D rb;
     bool isGrounded = true;
     float originalGravity;
-    SpriteRenderer spriteRenderer;
     float lastDirection = 1;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         originalGravity = rb.gravityScale;
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void OnMove(InputValue value)
     {
@@ -49,11 +47,12 @@ public class PlayerMovements : MonoBehaviour
     }
     void FlipPlayer(float moveDirection)
     {
-        if (Mathf.Sign(moveDirection) != lastDirection) // Om riktningen ändras
+        if (moveDirection != 0 && Mathf.Sign(moveDirection) != Mathf.Sign(transform.localScale.x))
         {
-            lastDirection = Mathf.Sign(moveDirection);
-            spriteRenderer.flipX = lastDirection < 0; // Flippar åt vänster
+            transform.localScale = new Vector2(Mathf.Sign(moveDirection), transform.localScale.y);
         }
+        
+
     }
     private IEnumerator Dash()
     {

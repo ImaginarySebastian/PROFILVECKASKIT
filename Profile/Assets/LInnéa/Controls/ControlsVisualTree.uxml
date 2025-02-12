@@ -3,7 +3,7 @@
     <ui:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/SG-grafik/sprites/kletwall.png?fileID=2800000&amp;guid=bade89cb2f77a7940ad52593d282d155&amp;type=3#kletwall&quot;);">
         <ui:VisualElement name="TopContainer" style="flex-grow: 1; flex-direction: column-reverse; align-items: center;">
             <ui:Label tabindex="-1" text="Abortion Tools&#10;   Controls" parse-escape-sequences="true" display-tooltip-when-elided="true" name="header" class="header" />
-            <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton2" class="backbutton" style="width: 50px; height: 50px; position: absolute; top: 80px; left: 600px;" />
+            <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton2" class="backbutton Button" style="width: 50px; height: 50px; position: absolute; top: 80px; left: 600px;" />
         </ui:VisualElement>
         <ui:VisualElement name="MiddelContainer" style="flex-grow: 1; flex-direction: row;">
             <ui:VisualElement name="LeftContaier" style="flex-grow: 1; flex-direction: column; align-items: stretch; justify-content: flex-start;">

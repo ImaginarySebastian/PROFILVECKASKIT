@@ -31,30 +31,35 @@ public class GameSession : MonoBehaviour
     {
         string difficulty = PlayerPrefs.GetString("Difficulty","Medium");
 
+        en = FindObjectOfType<Enemy>();
+        sin = FindObjectOfType<SingleBulletEnemy>();
+        fly = FindObjectOfType<EnemyFlying>();
+
         switch (difficulty)
         {
             case "Easy":
                 playerLives = 5;
                 en.enemySpeed = 3f;
                 sin.enemySpeed = 5f;
-                fly.enemySpeed = 2f;
+                fly.enemySpeed = 0.5f;
                 break;
             case "Medium":
                 playerLives = 3;
                 en.enemySpeed = 5f;
                 sin.enemySpeed = 7f;
-                fly.enemySpeed = 4f;
+                fly.enemySpeed = 2f;
                 break;
             case "HardCore":
                 playerLives = 1;
                 en.enemySpeed = 10f;
                 sin.enemySpeed = 13f;
-                fly.enemySpeed = 7f;
+                fly.enemySpeed = 5f;
                 break;
             default:
                 playerLives = 3;
                 en.enemySpeed = 5f;
                 sin.enemySpeed = 7f;
+                fly.enemySpeed = 2f;
                 break;
         }
         Debug.Log("Difficulty:" + difficulty + "Player Lives set to " + playerLives);
