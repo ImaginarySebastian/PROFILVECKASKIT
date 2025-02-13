@@ -19,7 +19,7 @@
 }
 
 .backbutton {
-    background-image: url("project://database/Assets/LInn%C3%A9a/Sprites/backbutton.png?fileID=2800000&guid=8246587d9ff6d064f81305b0edae246c&type=3#backbutton");
+    background-image: url("project://database/Assets/LInn%C3%A9a/Sprites/backbutton.png?fileID=21300000&guid=8246587d9ff6d064f81305b0edae246c&type=3#backbutton");
     width: 50px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0);
@@ -33,14 +33,14 @@
 }
 
 .levelbutton {
-    width: 100px;
-    height: 100px;
+    width: 128px;
+    height: 128px;
     background-color: rgba(0, 0, 0, 0);
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/SG-grafik/sprites/star_butt.png?fileID=2800000&guid=55964244acbf2ea4d9f8ef01c81fc5b3&type=3#star_butt");
+    background-image: none;
     margin-right: 40px;
     margin-left: 40px;
     bottom: 100px;
@@ -117,4 +117,37 @@
     border-top-color: rgba(0, 0, 0, 0.78);
     border-bottom-color: rgba(0, 0, 0, 0.78);
     align-items: center;
+}
+
+#DifficultyChoose .unity-base-popup-field__input {
+    background-color: rgb(255, 79, 201);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgba(0, 0, 0, 0.81);
+    border-right-color: rgba(0, 0, 0, 0.81);
+    border-top-color: rgba(0, 0, 0, 0.81);
+    border-bottom-color: rgba(0, 0, 0, 0.81);
+}
+
+#DifficultyChoose .unity-base-popup-field__text {
+    color: rgb(0, 0, 0);
+}
+
+.unity-base-slider__dragger {
+    background-image: url("project://database/Assets/SG-grafik/sprites/menubutton.png?fileID=2800000&guid=5709531bd2515704d98d55c1f247d1c5&type=3#menubutton");
+    width: 20px;
+}
+
+.unity-toggle__checkmark {
+    background-color: rgb(255, 79, 201);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
 }
