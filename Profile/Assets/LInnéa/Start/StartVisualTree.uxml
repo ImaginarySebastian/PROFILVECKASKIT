@@ -11,5 +11,8 @@
             <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level2" class="levelbutton Button" />
             <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level3" class="levelbutton Button" />
         </ui:VisualElement>
+        <ui:VisualElement name="LastContainer" style="flex-grow: 1; align-items: center;">
+            <ui:Button text="The end" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BossLevel" class="levelbutton Button" style="width: 256px; height: 256px; bottom: 100px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
