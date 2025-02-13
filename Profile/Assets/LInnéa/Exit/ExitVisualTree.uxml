@@ -11,6 +11,6 @@
                 <ui:Button text="No" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NoButton" class="button Button" style="font-size: 40px; -unity-font: url(&quot;project://database/Assets/LInn%C3%A9a/Fonts/DotGothic16/DotGothic16-Regular.ttf?fileID=12800000&amp;guid=b3411212d2e427141ba78b75e0432f07&amp;type=3#DotGothic16-Regular&quot;); -unity-font-definition: initial; width: 200px; height: 128px; margin-top: 70px; margin-right: 0; margin-bottom: 0; margin-left: 200px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="CryingCat" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/SG-grafik/sprites/characterplayer_cry.png?fileID=21300000&amp;guid=fc8d8b64a90925d4b92f3bf302e0d866&amp;type=3#characterplayer_cry&quot;); position: relative; width: 290px; height: 305px; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+        <ui:VisualElement name="CryingCat" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/SG-grafik/sprites/characterplayer_cry.png?fileID=21300000&amp;guid=fc8d8b64a90925d4b92f3bf302e0d866&amp;type=3#characterplayer_cry&quot;); position: relative; width: 512px; height: 512px; -unity-background-image-tint-color: rgb(255, 255, 255); flex-shrink: 1;" />
     </ui:VisualElement>
 </ui:UXML>
