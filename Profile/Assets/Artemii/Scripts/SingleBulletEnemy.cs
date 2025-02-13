@@ -26,7 +26,7 @@ public class SingleBulletEnemy : MonoBehaviour
     }
     private IEnumerator AttackingCyckle()
     {
-        while (true)
+        //while (true)
         {
             if (playerInRange && !haveShooted)
             {

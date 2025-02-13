@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7510196470873384621}
   - component: {fileID: 8240614977660686080}
   - component: {fileID: 9095161296803981798}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SingleShootEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 24576
+      m_Bits: 640
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246489737043419521}
   - component: {fileID: 6648542148780128032}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ShootingZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8948737764838290732}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4282288867943324445}
   - component: {fileID: 3241953325913544974}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: EdgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
