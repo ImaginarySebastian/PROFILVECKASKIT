@@ -39,27 +39,64 @@ public class GameSession : MonoBehaviour
         {
             case "Easy":
                 playerLives = 5;
-                en.enemySpeed = 3f;
-                sin.enemySpeed = 5f;
-                fly.enemySpeed = 0.5f;
+                if (en!=null)
+                {
+                    en.enemySpeed = 3f;
+                }
+                if(sin != null)
+                {
+                    sin.enemySpeed = 5f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 0.5f;
+                }
                 break;
             case "Medium":
                 playerLives = 3;
-                en.enemySpeed = 5f;
-                sin.enemySpeed = 7f;
-                fly.enemySpeed = 2f;
+                if (en != null)
+                {
+                    en.enemySpeed = 5f;
+                }
+                if (sin != null)
+                {
+                    sin.enemySpeed = 7f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 2f;
+                }
                 break;
             case "HardCore":
                 playerLives = 1;
+                if (en != null)
+                {
+                    en.enemySpeed = 10f;
+                }
+                if (sin != null)
+                {
+                    sin.enemySpeed = 13f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 5f;
+                }
                 en.enemySpeed = 10f;
-                sin.enemySpeed = 13f;
-                fly.enemySpeed = 5f;
                 break;
             default:
                 playerLives = 3;
-                en.enemySpeed = 5f;
-                sin.enemySpeed = 7f;
-                fly.enemySpeed = 2f;
+                if (en != null)
+                {
+                    en.enemySpeed = 5f;
+                }
+                if (sin != null)
+                {
+                    sin.enemySpeed = 7f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 2f;
+                }
                 break;
         }
         Debug.Log("Difficulty:" + difficulty + "Player Lives set to " + playerLives);
