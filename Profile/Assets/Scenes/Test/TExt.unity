@@ -1230,7 +1230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436144439234912505, guid: 1cbb7fd07bd36db48aa288355e5fe5a1, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 445521372860423290, guid: 1cbb7fd07bd36db48aa288355e5fe5a1, type: 3}
       propertyPath: _buttonEvents.Array.data[4].unityEvent.m_PersistentCalls.m_Calls.Array.size
