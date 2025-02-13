@@ -7,17 +7,18 @@ using UnityEngine.UIElements;
 
 public class HUDen : MonoBehaviour
 {
-    VisualElement root;
+    [SerializeField] UIDocument _document;
     VisualElement _healthContainer;
-
+    private VisualElement _curMenu = null;
+    float normalTimeScale;
     private void Awake()
     {
-        root = GetComponent<UIDocument>().rootVisualElement;
     }
     // Start is called before the first frame update
     void Start()
     {
-        _healthContainer = root.Q<VisualElement>("HealthContainer");
+        _curMenu = _document.rootVisualElement.Q<VisualElement>("HUD");
+        _healthContainer = _document.rootVisualElement.Q<VisualElement>("HealthContainer");
         if (_healthContainer != null)
         {
             GameSession session = FindObjectOfType<GameSession>();
@@ -25,14 +26,6 @@ public class HUDen : MonoBehaviour
             {
                 CreateHearts(_healthContainer, (uint)session.playerLives);
             }
-            else
-            {
-                Debug.LogWarning("Gamesessiassfsahf");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Healthcontainer notnsadasf");
         }
     }
     private void CreateHearts(VisualElement HealthContainer, uint hearts)
@@ -45,9 +38,28 @@ public class HUDen : MonoBehaviour
             HealthContainer.Add(token);
         }
     }
+    public void PauseMode()
+    {
+        if (_curMenu != null)
+        {
+            _curMenu.style.display = DisplayStyle.None;
+        }
+        _curMenu = _document.rootVisualElement.Q<VisualElement>("UIVisualTreePaus");
+        _curMenu.style.display = DisplayStyle.Flex;
+        normalTimeScale = Time.timeScale;
+        Time.timeScale = 0;
+    }
+    public void Resume()
+    {
+        _curMenu.style.display = DisplayStyle.None;
+        _curMenu = _document.rootVisualElement.Q<VisualElement>("HUD");
+        _curMenu.style.display = DisplayStyle.Flex;
+        Time.timeScale = normalTimeScale;
+    }
     // Update is called once per frame
     void Update()
     {
         
     }
 }
+
