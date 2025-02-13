@@ -28,6 +28,14 @@ public class Menu : MonoBehaviour
         _curMenu.style.display = DisplayStyle.Flex;
     }
 
+    public void HideMenu()
+    {
+        if (_curMenu != null)
+        {
+            _curMenu.style.display = DisplayStyle.None;
+        }
+    }
+
     public void LoadScene(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);
@@ -72,6 +80,8 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetString("Difficulty", difficulty);
         PlayerPrefs.Save();
     }
+
+
 }
 
 [System.Serializable]
