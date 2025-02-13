@@ -40,10 +40,10 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    background-image: none;
+    background-image: url("project://database/Assets/SG-grafik/sprites/star_butt.png?fileID=21300000&guid=dc52c00fe033b834db974d043b9d3222&type=3#star_butt");
     margin-right: 40px;
     margin-left: 40px;
-    bottom: 100px;
+    bottom: 0;
     font-size: 40px;
     -unity-font: url("project://database/Assets/LInn%C3%A9a/Fonts/DotGothic16/DotGothic16-Regular.ttf?fileID=12800000&guid=b3411212d2e427141ba78b75e0432f07&type=3#DotGothic16-Regular");
     -unity-font-definition: initial;
