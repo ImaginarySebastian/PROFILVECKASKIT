@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEditor;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovements : MonoBehaviour
 {
@@ -87,6 +88,10 @@ public class PlayerMovements : MonoBehaviour
         }
         Debug.Log(lastDirection);
         Run();
+    }
+    private void OnPause()
+    {
+        FindObjectOfType<HUDen>().PauseMode();
     }
     private void FixedUpdate()
     {
