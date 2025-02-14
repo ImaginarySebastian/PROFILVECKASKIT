@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8507818263539713505}
   - component: {fileID: 8278586838217994347}
   - component: {fileID: -3024916900565058128}
+  - component: {fileID: -6383737946369526191}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -264,6 +265,18 @@ CustomCollider2D:
   m_CustomShapes:
     m_Shapes: []
     m_Vertices: []
+--- !u!114 &-6383737946369526191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787891659807848544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6524bfb9df5514ea3673da2501203c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7716476570301687564
 GameObject:
   m_ObjectHideFlags: 0
