@@ -8,11 +8,12 @@ public class EnemyFlying : MonoBehaviour
     public bool enemyDeath;
     GameObject player;
     Rigidbody2D rb;
-    // Start is called before the first frame update
+    Animator ani;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
+        ani.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,11 +23,13 @@ public class EnemyFlying : MonoBehaviour
         {
             Vector2 direction = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y-transform.position.y);
             rb.velocity = new Vector2(direction.x * enemySpeed, direction.y*enemySpeed);
+            ani.SetBool("BatDeath", true);
         }
         else
         {
             rb.velocity = Vector2.zero;
             Destroy(gameObject,1f);
+            ani.SetBool("BatDeath", false);
         }
     }
     private void FixedUpdate()
