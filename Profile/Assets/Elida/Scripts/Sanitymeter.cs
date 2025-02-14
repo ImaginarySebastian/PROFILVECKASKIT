@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Sanitymeter : MonoBehaviour
 {
+    [SerializeField] Animator ani;
 
     public float MaxSanity = 100f;
     public float CurentSanity = 100f;
@@ -31,7 +32,6 @@ public class Sanitymeter : MonoBehaviour
 
         if (SanityMeter == null)
         {
-            Debug.LogError("\"SanityMeter (Slider) is not assigned in the inspector!\"");
         }
 
         if(mainCamera == null)
@@ -41,7 +41,6 @@ public class Sanitymeter : MonoBehaviour
 
         if(OverLay == null)
         {
-            Debug.LogError("OverLay (Image) is not assigned in the inspector!");
             if (OverLay != null)
             {
                 OverLay.color = new Color(0, 0, 0, 0);
@@ -73,31 +72,34 @@ public class Sanitymeter : MonoBehaviour
         
     }
     //If you "eat" or pick up a rat sanity restors
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
 
         if (collision.gameObject.CompareTag("Restorsanity"))
         {
             Restorsanity();
-
+            ani.SetBool("Blooded", true);
+            StartCoroutine(ChangeAnimation());
         }
+    }
+    private IEnumerator ChangeAnimation()
+    {
+        yield return new WaitForSeconds(5f);
+        ani.SetBool("Blooded", false);
     }
     //gives back the sanity
     void Restorsanity()
     {
-        Debug.Log("Before restore: " + CurentSanity);
 
-       CurentSanity += RestorAmunt;
+        CurentSanity += RestorAmunt;
         CurentSanity = Mathf.Clamp(CurentSanity, 0f, MaxSanity);
-        Debug.Log("Sanity Restored! Current sanity" + CurentSanity);
 
         if(SanityMeter != null)
         {
             SanityMeter.value = CurentSanity;
         }
         Darkenscren();
-        Debug.Log("After restore: " + CurentSanity);
     }
 
     void Darkenscren()
@@ -107,7 +109,6 @@ public class Sanitymeter : MonoBehaviour
         {
             float targetAlpha = 1f - CurentSanity / MaxSanity;
             OverLay.color = new Color(0, 0, 0, Mathf.Lerp(OverLay.color.a, targetAlpha, Time.deltaTime * 100f));
-            Debug.Log("OverLay alpha: " + OverLay.color.a);
         }
     }
 }

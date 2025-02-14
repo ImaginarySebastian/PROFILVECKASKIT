@@ -210,7 +210,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  dashSpeed: 150
+  dashSpeed: 50
   dashDuration: 0.1
   dashCooldown: 3
 --- !u!114 &8509839302927788102
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381921842f68d8f4e9658bb56cbd1e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ani: {fileID: 0}
   MaxSanity: 100
   CurentSanity: 100
   Damage: 5

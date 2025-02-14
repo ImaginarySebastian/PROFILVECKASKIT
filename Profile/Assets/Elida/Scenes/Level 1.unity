@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &29511716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6394106229004788117, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
+  m_PrefabInstance: {fileID: 956163575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &42275179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4659737634655900239, guid: b3178fb9c4ed1dd4aa3482eb17bce34d, type: 3}
@@ -827,6 +832,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3326956210140548308, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
   m_PrefabInstance: {fileID: 956163575}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &358677516
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29511716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d804287d015683488965d7adaa67c37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &392827011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4659737634655900239, guid: b3178fb9c4ed1dd4aa3482eb17bce34d, type: 3}
@@ -1687,6 +1713,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 225807988899932580, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
+      propertyPath: groundFilter.useLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3326956210140548308, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -101.73003
@@ -1754,7 +1784,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6394106229004788117, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 358677516}
   m_SourcePrefab: {fileID: 100100000, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
 --- !u!4 &963386531 stripped
 Transform:
@@ -3100,7 +3133,7 @@ GameObject:
   - component: {fileID: 1688881377}
   - component: {fileID: 1688881379}
   - component: {fileID: 1688881378}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

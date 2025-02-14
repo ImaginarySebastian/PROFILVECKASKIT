@@ -20,10 +20,5 @@ public class Spike : MonoBehaviour
                 FindFirstObjectByType<GameSession>().TakeLife();
             }
         }
-
-       
     }
-
-
-
 }
