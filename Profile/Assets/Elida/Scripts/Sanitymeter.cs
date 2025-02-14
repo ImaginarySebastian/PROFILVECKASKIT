@@ -51,6 +51,10 @@ public class Sanitymeter : MonoBehaviour
 
     void Update()
     {
+        if (OverLay == null)
+        {
+            Debug.LogError("OverLay is NULL! Cannot darken screen.");
+        }
         if (Walking == true && CurentSanity >= 0f)
         {
             //Sanity goes down all the time ;)
@@ -61,9 +65,16 @@ public class Sanitymeter : MonoBehaviour
             Darkenscren();
         }
         //Sound starts playing and the scren go's darker
-       
-        
-        
+
+        if (SanityMeter != null)
+        {
+            SanityMeter.value = CurentSanity;
+        }
+        else
+        {
+            Debug.LogError("SanityMeter Slider reference is NULL!");
+        }
+
         if (CurentSanity == 60f && Highpitchedringing && !Highpitchedringing.isPlaying)
         {
             Highpitchedringing.PlayOneShot(ringing);

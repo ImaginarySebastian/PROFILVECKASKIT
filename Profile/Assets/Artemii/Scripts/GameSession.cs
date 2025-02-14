@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
@@ -11,15 +12,15 @@ public class GameSession : MonoBehaviour
     EnemyFlying fly;
     EnemyShoot shoot;
     PlayerShotting plaSho;
+    Sanitymeter sanitymeter;
     private void Awake()
     {
         int numGameSession = FindObjectsByType<GameSession>(FindObjectsSortMode.None).Length;
-        Debug.Log(numGameSession);
         if (numGameSession > 1)
         {
             Debug.Log("Here is more then one Gamesessicion");
             Destroy(gameObject);
-        }
+        }   
         else
         {
             DontDestroyOnLoad(gameObject);
@@ -29,6 +30,7 @@ public class GameSession : MonoBehaviour
     {
         SetPlayerLivesByDifficulty();
         Debug.Log("Player Lives is " + playerLives);
+        sanitymeter = FindObjectOfType<Sanitymeter>();
     }
     private void SetPlayerLivesByDifficulty()
     {
@@ -156,10 +158,24 @@ public class GameSession : MonoBehaviour
             Debug.Log("Player lives is " + playerLives);
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
+
+            StartCoroutine(ResetSanity());
         }
         else
         {
             ResetGameSession();
+        }
+    }
+    private IEnumerator ResetSanity()
+    {
+        yield return new WaitForSeconds(0.1f); // Vänta tills scenen laddats in
+        Sanitymeter sanity = FindObjectOfType<Sanitymeter>();
+        if (sanity != null)
+        {
+            sanity.CurentSanity = sanity.MaxSanity;
+            sanity.Walking = true;
+            sanity.SanityMeter = sanity.gameObject.GetComponentInChildren<Slider>();
+            sanity.OverLay = sanity.gameObject.GetComponentInChildren<Image>();
         }
     }
     void ResetGameSession()
