@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e6555d92907baf041bbee6b4660cadb6
+guid: f72cc12eddd5ab64698ed022c4f777f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,175 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_0"
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9eeb4d19f22377439be1933c77b3d86
-      internalID: 1302175004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_1"
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2462ebc530613ec46bf50fe86167421b
-      internalID: -1191746943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_2"
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 571f6bf34ee104b4ba9bf26119b1cdf2
-      internalID: -163173917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_3"
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 985bc29aa1fdf12478e433665f271054
-      internalID: -293151583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_4"
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0472b2f78f0fe14690395766e6c5ff0
-      internalID: -465790948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_5"
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e7b33c4a4f3a424bb1e0f2c22b6cd20
-      internalID: 300987771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_6"
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd9d78aa02a62fc4483935a63cf2fc6f
-      internalID: 995765755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_7"
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b930cbde31ec04744880ad7f17534ead
-      internalID: -328308983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_8"
+      name: "sp\xF6ke_profilvecka_walking_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -279,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e1bcfe642934584dabafc3b8c47105d
-      internalID: 1172460117
+      spriteID: bd387b083f2b0ce40942e396b506fe09
+      internalID: -1066419033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_9"
+      name: "sp\xF6ke_profilvecka_walking_1"
       rect:
         serializedVersion: 2
         x: 32
@@ -300,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7ed7c93c119a9547b7f101fb94110e2
-      internalID: 1360264822
+      spriteID: b6e0e4cf3f677a94583169d26d288d7b
+      internalID: -264690045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_10"
+      name: "sp\xF6ke_profilvecka_walking_2"
       rect:
         serializedVersion: 2
         x: 64
@@ -321,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06686f4592d99bf4c8fb33ea30c783de
-      internalID: -1270049434
+      spriteID: c4919eb86becd264e9138e1de6441680
+      internalID: -790057054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sp\xF6ke_profilvecka_d\xF6_11"
+      name: "sp\xF6ke_profilvecka_walking_3"
       rect:
         serializedVersion: 2
         x: 96
@@ -342,8 +174,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61b9f945facd14444a7f3181d696b11e
-      internalID: 1915205096
+      spriteID: fc3855a392d15e64eb7ca82142d93916
+      internalID: 658702280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sp\xF6ke_profilvecka_walking_4"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c398943d4bb4744a490fdc0ddf7384
+      internalID: -1768392391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sp\xF6ke_profilvecka_walking_5"
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d0ec1a8dde5d24ca63f25ca39c44b9
+      internalID: 1254031945
       vertices: []
       indices: 
       edges: []
@@ -359,18 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "sp\xF6ke_profilvecka_d\xF6_0": 1302175004
-      "sp\xF6ke_profilvecka_d\xF6_1": -1191746943
-      "sp\xF6ke_profilvecka_d\xF6_10": -1270049434
-      "sp\xF6ke_profilvecka_d\xF6_11": 1915205096
-      "sp\xF6ke_profilvecka_d\xF6_2": -163173917
-      "sp\xF6ke_profilvecka_d\xF6_3": -293151583
-      "sp\xF6ke_profilvecka_d\xF6_4": -465790948
-      "sp\xF6ke_profilvecka_d\xF6_5": 300987771
-      "sp\xF6ke_profilvecka_d\xF6_6": 995765755
-      "sp\xF6ke_profilvecka_d\xF6_7": -328308983
-      "sp\xF6ke_profilvecka_d\xF6_8": 1172460117
-      "sp\xF6ke_profilvecka_d\xF6_9": 1360264822
+      "sp\xF6ke_profilvecka_walking_0": -1066419033
+      "sp\xF6ke_profilvecka_walking_1": -264690045
+      "sp\xF6ke_profilvecka_walking_2": -790057054
+      "sp\xF6ke_profilvecka_walking_3": 658702280
+      "sp\xF6ke_profilvecka_walking_4": -1768392391
+      "sp\xF6ke_profilvecka_walking_5": 1254031945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
