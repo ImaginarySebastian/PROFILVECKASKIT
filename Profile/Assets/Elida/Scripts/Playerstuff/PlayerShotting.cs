@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerShotting : MonoBehaviour
 {
-    [SerializeField] float BulletSpeed = 10f;
+    [SerializeField] public float BulletSpeed = 10f;
     [SerializeField] GameObject Bullet;
     public float Direction = 1f;
 
@@ -30,7 +30,7 @@ public class PlayerShotting : MonoBehaviour
         {
             Direction = 1f;
         }
-
+        Debug.Log(BulletSpeed);
     }
     void OnFire()
     {

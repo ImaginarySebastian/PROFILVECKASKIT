@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] ContactFilter2D groundFilter;
     [SerializeField] BoxCollider2D edge;
     [SerializeField] float jumpSpeed = 5f;
+    public bool enemyDeath = false;
     bool isGrounded = true;
     GameObject player;
     Rigidbody2D rb;
@@ -22,13 +23,20 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isGrounded == true)
+        if (enemyDeath == false && isGrounded == true )
         {
+            Debug.Log("Enemy inte dör");
             if (player != null)
             {
                 float direction = Mathf.Sign(player.transform.position.x - transform.position.x);
                 rb.velocity = new Vector2(direction*enemySpeed,rb.velocity.y);
             }
+        }
+        else
+        {
+            Debug.Log("Enemy dör");
+            rb.velocity = Vector2.zero;
+            Destroy(gameObject, 1f);
         }
     }
     private IEnumerator Jump()

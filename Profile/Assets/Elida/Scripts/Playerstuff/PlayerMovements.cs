@@ -20,15 +20,16 @@ public class PlayerMovements : MonoBehaviour
     bool isGrounded = true;
     float originalGravity;
     float lastDirection = 1;
+    Animator ani;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         originalGravity = rb.gravityScale;
+        ani = GetComponent<Animator>();
     }
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        
     }
     void OnJump()
     {
@@ -84,7 +85,12 @@ public class PlayerMovements : MonoBehaviour
     {
         if (moveInput.x != 0)
         {
+            ani.SetBool("isMoving", true);
             lastDirection = moveInput.x;
+        }
+        else
+        {
+            ani.SetBool("isMoving", false);
         }
         Debug.Log(lastDirection);
         Run();
