@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8355933846706640225}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7258185860026329924}
   - component: {fileID: 5180997520659840263}
   - component: {fileID: 4006992385390384164}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: EnemyShooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 741202076702475626, guid: 16e453c087a51834fbe478d0f0f1da96, type: 3}
   firePoint: {fileID: 8355933846706640225}
   bulletSpeed: 5
-  fireRate: 1
+  fireRate: 5
 --- !u!1 &6880867238014291934
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3327963975939109603}
   - component: {fileID: 2480154450031191352}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ShootRadius
   m_TagString: Enemy
   m_Icon: {fileID: 0}

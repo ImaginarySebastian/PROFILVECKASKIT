@@ -7,7 +7,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed = 5f;
-    [SerializeField] private float fireRate = 1f; 
+    [SerializeField] public float fireRate = 1f; 
 
     private Transform player;
     private bool playerInRange = false;

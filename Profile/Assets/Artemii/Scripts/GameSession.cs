@@ -9,11 +9,15 @@ public class GameSession : MonoBehaviour
     Enemy en;
     SingleBulletEnemy sin;
     EnemyFlying fly;
+    EnemyShoot shoot;
+    PlayerShotting plaSho;
     private void Awake()
     {
         int numGameSession = FindObjectsByType<GameSession>(FindObjectsSortMode.None).Length;
+        Debug.Log(numGameSession);
         if (numGameSession > 1)
         {
+            Debug.Log("Here is more then one Gamesessicion");
             Destroy(gameObject);
         }
         else
@@ -25,7 +29,6 @@ public class GameSession : MonoBehaviour
     {
         SetPlayerLivesByDifficulty();
         Debug.Log("Player Lives is " + playerLives);
-        en = GetComponent<Enemy>();
     }
     private void SetPlayerLivesByDifficulty()
     {
@@ -34,39 +37,121 @@ public class GameSession : MonoBehaviour
         en = FindObjectOfType<Enemy>();
         sin = FindObjectOfType<SingleBulletEnemy>();
         fly = FindObjectOfType<EnemyFlying>();
+        shoot = FindObjectOfType<EnemyShoot>();
+        plaSho = FindObjectOfType<PlayerShotting>();
 
         switch (difficulty)
         {
             case "Easy":
                 playerLives = 5;
-                en.enemySpeed = 3f;
-                sin.enemySpeed = 5f;
-                fly.enemySpeed = 0.5f;
+                if (plaSho!=null)
+                {
+                    plaSho.BulletSpeed = 10;
+                }
+                if (shoot!=null)
+                {
+                    shoot.fireRate = 8;
+                }
+                if (en!=null)
+                {
+                    en.enemySpeed = 3f;
+                    en.jumpSpeed = 5f;
+                }
+                if(sin != null)
+                {
+                    sin.enemySpeed = 5f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 0.5f;
+                }
                 break;
             case "Medium":
                 playerLives = 3;
-                en.enemySpeed = 5f;
-                sin.enemySpeed = 7f;
-                fly.enemySpeed = 2f;
+                if (plaSho!=null)
+                {
+                    plaSho.BulletSpeed = 15;
+                }
+                if (shoot!=null)
+                {
+                    shoot.fireRate = 5;
+                }
+                if (en != null)
+                {
+                    en.enemySpeed = 5f;
+                    en.jumpSpeed = 8f;
+                }
+                if (sin != null)
+                {
+                    sin.enemySpeed = 7f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 2f;
+                }
                 break;
             case "HardCore":
                 playerLives = 1;
-                en.enemySpeed = 10f;
-                sin.enemySpeed = 13f;
-                fly.enemySpeed = 5f;
+                if (plaSho!=null)
+                {
+                    plaSho.BulletSpeed = 50;
+                }
+                if (shoot != null)
+                {
+                    shoot.fireRate = 3;
+                }
+                if (en != null)
+                {
+                    en.enemySpeed = 10f;
+                    en.jumpSpeed = 9f;
+                }
+                if (sin != null)
+                {
+                    sin.enemySpeed = 13f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 5f;
+                }
                 break;
             default:
                 playerLives = 3;
-                en.enemySpeed = 5f;
-                sin.enemySpeed = 7f;
-                fly.enemySpeed = 2f;
+                if (plaSho!=null)
+                {
+                    plaSho.BulletSpeed = 30;
+                }
+                if (shoot != null)
+                {
+                    shoot.fireRate = 5;
+                }
+                if (en != null)
+                {
+                    en.enemySpeed = 5f;
+                    en.jumpSpeed = 8f;
+                }
+                if (sin != null)
+                {
+                    sin.enemySpeed = 7f;
+                }
+                if (fly != null)
+                {
+                    fly.enemySpeed = 2f;
+                }
                 break;
         }
-        Debug.Log("Difficulty:" + difficulty + "Player Lives set to " + playerLives);
+        Debug.Log("Difficulty:" + difficulty + " Player Lives set to " + playerLives);
     }
     public void TakeLife()
     {
-        if(playerLives > 1)
+        Debug.Log("Minus life");
+        playerLives--;
+        HUDen hud = FindObjectOfType<HUDen>();
+        if (hud != null)
+        {
+            hud.UpdateHearts(playerLives);
+        }
+        Debug.Log("Lives " + playerLives );
+        if(playerLives > 0)
         {
             Debug.Log("Player lives is " + playerLives);
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -79,18 +164,11 @@ public class GameSession : MonoBehaviour
     }
     void ResetGameSession()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            FindFirstObjectByType<ScenePersist>().ResetScenePersist();
-            SceneManager.LoadScene(2);
-            Destroy(gameObject);
-        }
-        else
-        {
-            FindFirstObjectByType<ScenePersist>().ResetScenePersist();
-            SceneManager.LoadScene(0);
-            Destroy(gameObject);
-        }
+        ScenePersist persist = FindFirstObjectByType<ScenePersist>();
+
+        persist.ResetScenePersist();
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()

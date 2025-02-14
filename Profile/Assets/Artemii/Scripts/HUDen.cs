@@ -17,8 +17,16 @@ public class HUDen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(InitializeHUD());
+    }
+
+    private IEnumerator InitializeHUD()
+    {
+        yield return new WaitForSeconds(0.1f); // Vänta lite så att GameSession hinner starta
+
         _curMenu = _document.rootVisualElement.Q<VisualElement>("HUD");
         _healthContainer = _document.rootVisualElement.Q<VisualElement>("HealthContainer");
+
         if (_healthContainer != null)
         {
             GameSession session = FindObjectOfType<GameSession>();
@@ -26,6 +34,13 @@ public class HUDen : MonoBehaviour
             {
                 CreateHearts(_healthContainer, (uint)session.playerLives);
             }
+        }
+    }
+    public void UpdateHearts(int newLives)
+    {
+        if (_healthContainer != null)
+        {
+            CreateHearts(_healthContainer, (uint)newLives);
         }
     }
     private void CreateHearts(VisualElement HealthContainer, uint hearts)
