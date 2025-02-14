@@ -65,6 +65,8 @@ public class Menu : MonoBehaviour
             _difficultyDropdown.choices = new List<string> { "Easy", "Medium", "HardCore"};
             _difficultyDropdown.value = PlayerPrefs.GetString("Difficulty", "Medium");
             _difficultyDropdown.RegisterValueChangedCallback(evt => SetDifficulty(evt.newValue));
+            string difficulty = PlayerPrefs.GetString("Difficulty", "Medium");
+            Debug.Log("Loaded Difficulty: " + difficulty);
         }
     }
 

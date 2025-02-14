@@ -34,7 +34,7 @@
 .heart {
     width: 64px;
     height: 64px;
-    background-image: url("project://database/Assets/SG-grafik/sprites/Profil/Heart%20lif_.png?fileID=2800000&guid=4a28e05988880994cb7e84f7fa8c2f3b&type=3#Heart lif_");
+    background-image: url("project://database/Assets/SG-grafik/sprites/heart_lif.png?fileID=2800000&guid=be49f9ddacd1a9a4598984c1865f4ebd&type=3#heart_lif");
     padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
