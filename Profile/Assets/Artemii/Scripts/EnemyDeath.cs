@@ -13,13 +13,12 @@ public class EnemyDeath : MonoBehaviour
     }
     public void EnemyDead()
     {
-        rb.velocity = Vector2.zero;
         ani.SetBool("Death", true);
         StartCoroutine(DestroyEnemy());
     }
     private IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 }
