@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField]Animator ani;
-    Enemy ene;
-    EnemyFlying fly;
+    EnemyDeath ne;
     private void Start()
     {
-        ene = FindObjectOfType<Enemy>();
-        fly = FindObjectOfType<EnemyFlying>();
+        ne = FindObjectOfType<EnemyDeath>();
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            ene.enemyDeath = true;
-            fly.enemyDeath = true;
-            ani.SetBool("Death", true);
+            ne.EnemyDead();
         }
-
-
         Destroy(gameObject);
     }
     void OnBecameInvisible()
