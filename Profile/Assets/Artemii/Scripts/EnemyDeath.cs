@@ -9,6 +9,7 @@ public class EnemyDeath : MonoBehaviour
     private void Start()
     {
         rb = GetComponent < Rigidbody2D>();
+        ani = GetComponent<Animator>();
     }
     public void EnemyDead()
     {
