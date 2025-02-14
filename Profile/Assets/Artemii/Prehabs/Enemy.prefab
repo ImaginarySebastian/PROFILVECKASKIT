@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3680096815660150644}
   - component: {fileID: 9176011181644686596}
   - component: {fileID: 4136033647006891879}
+  - component: {fileID: 7325862757754289789}
   - component: {fileID: 8507818263539713505}
   - component: {fileID: 8278586838217994347}
   - component: {fileID: -3024916900565058128}
@@ -166,6 +167,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7325862757754289789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787891659807848544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6524bfb9df5514ea3673da2501203c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8507818263539713505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +208,6 @@ MonoBehaviour:
     maxNormalAngle: 0
   edge: {fileID: 3848199663372357651}
   jumpSpeed: 5
-  enemyDeath: 0
 --- !u!95 &8278586838217994347
 Animator:
   serializedVersion: 5

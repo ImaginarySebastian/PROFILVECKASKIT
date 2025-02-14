@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyFlying : MonoBehaviour
 {
     [SerializeField] public float enemySpeed = 3f;
-    public bool enemyDeath;
     GameObject player;
     Rigidbody2D rb;
     Animator ani;
@@ -19,17 +18,11 @@ public class EnemyFlying : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null && enemyDeath==false)
+        if (player != null)
         {
             Vector2 direction = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y-transform.position.y);
             rb.velocity = new Vector2(direction.x * enemySpeed, direction.y*enemySpeed);
             ani.SetBool("BatDeath", true);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-            Destroy(gameObject,1f);
-            ani.SetBool("BatDeath", false);
         }
     }
     private void FixedUpdate()
