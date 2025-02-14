@@ -2108,9 +2108,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7773013889457484756, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773013889457484756, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773013889457484756, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773013889457484756, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8509839302927788102, guid: 57226c9efb7425a41b69b3465deb57c6, type: 3}
       propertyPath: OverLay
       value: 
