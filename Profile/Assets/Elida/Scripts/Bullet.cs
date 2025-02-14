@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    EnemyDeath ne;
+    Animator ani;
+    
     private void Start()
     {
-        ne = FindObjectOfType<EnemyDeath>();
+        ani = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        ani.SetBool("Shott", true);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            EnemyDeath ne = collision.gameObject.GetComponent<EnemyDeath>();
             ne.EnemyDead();
         }
         Destroy(gameObject);

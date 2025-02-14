@@ -63,7 +63,7 @@ public class GameSession : MonoBehaviour
                 }
                 if (fly != null)
                 {
-                    fly.enemySpeed = 0.5f;
+                    fly.enemySpeed = 0.3f;
                 }
                 break;
             case "Medium":
@@ -87,7 +87,7 @@ public class GameSession : MonoBehaviour
                 }
                 if (fly != null)
                 {
-                    fly.enemySpeed = 2f;
+                    fly.enemySpeed = 0.7f;
                 }
                 break;
             case "HardCore":
@@ -111,7 +111,7 @@ public class GameSession : MonoBehaviour
                 }
                 if (fly != null)
                 {
-                    fly.enemySpeed = 5f;
+                    fly.enemySpeed = 2f;
                 }
                 break;
             default:

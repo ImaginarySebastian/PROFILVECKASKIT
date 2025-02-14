@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (edge.IsTouchingLayers(LayerMask.GetMask("Hinder")))
+        if (edge.IsTouchingLayers(LayerMask.GetMask("Hinder"))||edge.IsTouchingLayers(LayerMask.GetMask("Default")))
         {
             Debug.Log("Det träffar");
             if (isGrounded)

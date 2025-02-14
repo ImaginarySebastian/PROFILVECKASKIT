@@ -88,6 +88,9 @@ public class Sanitymeter : MonoBehaviour
         yield return new WaitForSeconds(5f);
         ani.SetBool("Blooded", false);
     }
+
+
+
     //gives back the sanity
     void Restorsanity()
     {
