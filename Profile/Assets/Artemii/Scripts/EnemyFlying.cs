@@ -7,12 +7,10 @@ public class EnemyFlying : MonoBehaviour
     [SerializeField] public float enemySpeed = 3f;
     GameObject player;
     Rigidbody2D rb;
-    Animator ani;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
-        ani.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +20,6 @@ public class EnemyFlying : MonoBehaviour
         {
             Vector2 direction = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y-transform.position.y);
             rb.velocity = new Vector2(direction.x * enemySpeed, direction.y*enemySpeed);
-            ani.SetBool("BatDeath", true);
         }
     }
     private void FixedUpdate()
