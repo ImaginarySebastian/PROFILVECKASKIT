@@ -37,6 +37,7 @@ public class RatMovement : MonoBehaviour
         Vector2 scale = transform.localScale;
         scale.x = -scale.x;
         transform.localScale = scale;
+       
 
     }
 
